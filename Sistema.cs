@@ -26,7 +26,7 @@ namespace csharp_biblioteca
 
             if (utenteValido){
                 this.utentiRegistrati.Add(nuovoUtente);
-                Console.WriteLine("Complimenti, hai creato il tuo utente, ora puoi effettuare i prestiti");
+                Console.WriteLine("Complimenti, hai creato il tuo utente");
             }
         }
 
@@ -55,6 +55,30 @@ namespace csharp_biblioteca
             else{
                 Console.WriteLine("Non sei autorizzato a effettuare un prestito, prova con un altro utente");
             }
+        }
+
+        public void ricercaDocumento(int codice){
+            foreach(Documento documento in documentiPresenti){
+                /*Console.WriteLine(documento.GetType() == new Libro("",0,"",true,0,"","",0,0).GetType())*/;
+                //bool test = documento.GetType() == "csharp_biblioteca.Libro";
+                //Console.WriteLine(test);
+                //if(documento.GetType() == new Libro("", 0, "", true, 0, "", "", 0, 0).GetType(){
+                //    if(documento.)
+                //}
+            }
+        }
+
+        public Documento ricercaDocumento(string nome){
+            foreach (Documento documento in documentiPresenti){
+                if(documento.titolo == nome){
+                    return documento;
+                }
+                else{
+                    Console.WriteLine("Spiacente, non ho trovato nessun elemento con questo titolo");
+                    return null;
+                }
+            }
+            return null;
         }
     }
 
